@@ -1,4 +1,12 @@
-describe('Bubble Sort', function(){
+describe('Bubble Sort',
+beforeAll(function() {
+  spyOn(Window, 'callBack').and.callThrough()
+})
+it('Number of swaps is equal to length of array', function() {
+  Window.bubbleSort(array)
+  expect(Window.callBack.calls.count()).toEqual(array.length)
+}))
+function(){
   it('handles an empty array', function(){
     expect( bubbleSort([]) ).toEqual( [] );
   });
